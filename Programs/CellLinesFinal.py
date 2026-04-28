@@ -160,33 +160,6 @@ print("CDH1 plot saved as CDH1_Plot.png")
 top5_ducM = sorted_duc.head(5)['ModelID']
 top5_lobM = sorted_lob.head(5)['ModelID'] 
 
-# Find the Top 10 genes the model is using 
-#importances = rf.feature_importances_
-#feat_imp = pd.DataFrame({
-#    'Gene': features, 
-#    'Importance': importances
-#}).sort_values('Importance', ascending=False).head(10)
-
-#top_genes = feat_imp['Gene'].tolist()
-
-# Compare expression of these 10 genes in the cell lines
-#duc_expr = X.loc[top5_ducM, top_genes].mean()
-#lob_expr = X.loc[top5_lobM, top_genes].mean()
-
-#comparison = pd.DataFrame({
-#    'Importance': feat_imp.set_index('Gene')['Importance'],
-#    'Mean_Top_Ductal': duc_expr,
-#    'Mean_Top_Lobular': lob_expr
-#})
-
-# Calculate the difference in expression
-	# To see which genes distinguish the cell lines
-#comparison['Diff'] = comparison['Mean_Top_Ductal'] - \
-#	comparison['Mean_Top_Lobular']
-
-#print("\nTop 10 Model Genes: Expression in Predicted Cell Lines")
-#print(comparison.sort_values('Importance', ascending=False))
-
 # Find the top 10 genes from the model
 importances = rf.feature_importances_
 feat_imp = pd.DataFrame({
